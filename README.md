@@ -1,7 +1,7 @@
 
-# RediSetCode
+# codekaro
 
-This project is the server/API of my thesis project - RediSetCode. RediSetCode is a gamification of learning Programming for 1st year students in Naga College Foundation, Inc. 
+This project is the server/API of my thesis project - codekaro. codekaro is a gamification of learning Programming for 1st year students in Naga College Foundation, Inc. 
 
 
 ## Features

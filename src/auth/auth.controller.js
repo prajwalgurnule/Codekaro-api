@@ -51,14 +51,14 @@ exports.signup = catchAsync(async (req, res, next) => {
     await user.save();
   }
 
-  const verificationLink = `https://redisetcode-api.onrender.com/api/v1/auth/verify/${user._id}`;
+  const verificationLink = `https://codekaro-api.onrender.com/api/v1/auth/verify/${user._id}`;
 
   try {
     await sendEmail({
       email: user.email,
       subject: 'Verify Your Email',
       message: 'Confirm and verify your account',
-      html: `Ivan here from RediSetCode! Thank you for trying our app. Please click <a href="${verificationLink}">here</a> to verify your email.`,
+      html: `Ivan here from codekaro! Thank you for trying our app. Please click <a href="${verificationLink}">here</a> to verify your email.`,
     });
     console.log('email sent');
   } catch (err) {
@@ -98,7 +98,7 @@ exports.emailVerification = catchAsync(async (req, res, next) => {
   user.verified = true;
   await user.save();
 
-  res.redirect('https://redisetcode-react.vercel.app/map');
+  res.redirect('https://codekaro-react.vercel.app/map');
 });
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
@@ -113,7 +113,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   await user.save({ validateBeforeSave: false });
 
   // 3) Send it to user's email
-  const resetURL = `https://redisetcode-react.vercel.app/reset-password/${resetToken}`;
+  const resetURL = `https://codekaro-react.vercel.app/reset-password/${resetToken}`;
 
   const message = `Here is the link to reset your password: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
 
